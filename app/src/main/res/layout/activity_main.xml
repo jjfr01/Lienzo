@@ -48,19 +48,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Color"
+        android:text="Color de Pincel:"
         app:layout_constraintTop_toBottomOf="@id/lienzoView"
-        app:layout_constraintEnd_toStartOf="@id/spinnerPincelColor"/>
+        app:layout_constraintStart_toStartOf="@id/spinnerPincelColor"/>
 
     <Spinner
         android:id="@+id/spinnerPincelColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="7dp"
         android:layout_marginTop="8dp"
         android:entries="@array/colors"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lienzoView"
-        android:layout_marginRight="7dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pincelColorText" />
 
 </android.support.constraint.ConstraintLayout>

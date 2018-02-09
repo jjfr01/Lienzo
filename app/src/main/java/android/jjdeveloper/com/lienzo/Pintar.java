@@ -5,7 +5,6 @@ import android.graphics.Bitmap;
 import android.graphics.BlurMaskFilter;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.EmbossMaskFilter;
 import android.graphics.MaskFilter;
 import android.graphics.Paint;
 import android.graphics.Path;
@@ -19,13 +18,13 @@ import java.util.ArrayList;
 public class Pintar extends View {
 
     public static final int COLOR = Color.BLACK;
-    private static final float TOUCH_TOLERANCE = 4;
+    private static final float TOLERANCIA = 4;
+    private ArrayList<Pincel> trazadas = new ArrayList<>();
     private float mX, mY;
     private Path mPath;
     private Paint paint;
-    private ArrayList<Pincel> trazadas = new ArrayList<>();
     private int currentColor;
-    private int backgroundColor;
+    private int fondoColor;
     private int ancho_pincel;
     private boolean blur;
     private MaskFilter mBlur;
@@ -74,8 +73,8 @@ public class Pintar extends View {
     }
 
     public void clear() {
-        backgroundColor = Color.WHITE;
         trazadas.clear();
+        fondoColor = Color.WHITE;
         pincel_normal();
         invalidate();
     }
@@ -83,7 +82,7 @@ public class Pintar extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         canvas.save();
-        mCanvas.drawColor(backgroundColor);
+        mCanvas.drawColor(fondoColor);
         for (Pincel pp : trazadas) {
             paint.setStrokeWidth(pp.strokeWidth);
             paint.setMaskFilter(null);
@@ -116,7 +115,7 @@ public class Pintar extends View {
         float dx = Math.abs(x - mX);
         float dy = Math.abs(y - mY);
 
-        if (dx >= TOUCH_TOLERANCE || dy >= TOUCH_TOLERANCE) {
+        if (dx >= TOLERANCIA || dy >= TOLERANCIA) {
             mPath.quadTo(mX, mY, (x + mX) / 2, (y + mY) / 2);
             mX = x;
             mY = y;
