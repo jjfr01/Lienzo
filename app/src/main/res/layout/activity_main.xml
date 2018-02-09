@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="android.jjdeveloper.com.lienzo.MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <view
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/lienzoView"
+        class="android.jjdeveloper.com.lienzo.Pintar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="100dp"
+        />
+
+    <SeekBar
+        android:id="@+id/TamPincelSeekBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:max="30"
+        android:min="8"
+        android:minHeight="10dp"
+        android:minWidth="50dp"
+        android:progress="10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lienzoView"
+        android:layout_marginLeft="16dp" />
+
+    <TextView
+        android:id="@+id/TamPincelNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8"
+        app:layout_constraintEnd_toEndOf="@+id/TamPincelSeekBar"
+        app:layout_constraintStart_toEndOf="@+id/TamPincelSeekBar"
+        app:layout_constraintTop_toTopOf="@+id/TamPincelSeekBar" />
+
+    <TextView
+        android:id="@+id/pincelColorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Color"
+        app:layout_constraintTop_toBottomOf="@id/lienzoView"
+        app:layout_constraintEnd_toStartOf="@id/spinnerPincelColor"/>
+
+    <Spinner
+        android:id="@+id/spinnerPincelColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="7dp"
+        android:layout_marginTop="8dp"
+        android:entries="@array/colors"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lienzoView"
+        android:layout_marginRight="7dp" />
+
+</android.support.constraint.ConstraintLayout>

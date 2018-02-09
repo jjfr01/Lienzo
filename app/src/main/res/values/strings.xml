@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Lienzo</string>
+
+    <string-array name="colors">
+        <item>Black</item>
+        <item>Red</item>
+        <item>Blue</item>
+        <item>White</item>
+        <item>Yellow</item>
+        <item>Purple</item>
+        <item>Orange</item>
+        <item>Brown</item>
+    </string-array>
+</resources>
